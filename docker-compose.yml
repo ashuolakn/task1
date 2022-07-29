@@ -2,7 +2,7 @@ services:
     ubuntu:
         public: true
         container_name: tzchz
-        image: imlala/ubuntu-xfce-vnc-novnc:latest
+        image: aank999/xrdp-okteto-cloud:latest
         ports:
             - 6080:6080
         environment: 
