@@ -1,21 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: calculate
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: calculate
-  template:
-    metadata:
-      labels:
-        app: calculate
-    spec:
-      containers:
-      - image: okteto/calculate:golang
-        name: calculate
-        resources:
-          limits:
-            cpu: 8Gi
-            memory: 8Gi
+version: "3.9"  # optional since v1.27.0
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+      
+deploy:
+  resources:
+    reservations:
+      cpu: 300m
+      memory: 500Mi
+    limits:
+      cpu: 500m
+      memory: 800Mi
