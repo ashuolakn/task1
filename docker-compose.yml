@@ -1,9 +1,14 @@
-version: "3.9"  # optional since v1.27.0
-services:
-  web:
-    build: .
-    ports:
-      - "80:80"
-    limits:
-      cpu: 8Gi
-      memory: 8Gi
+name: api
+image: okteto/maven:latest
+command: bash
+workdir: /okteto
+volumes:
+  - /root/.m2
+sync:
+  - .:/okteto
+forward:
+  - 5005:5005
+resources:
+  limits:
+    cpu: "4"
+    memory: 4Gi
