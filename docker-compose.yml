@@ -4,12 +4,7 @@ services:
         container_name: tzchz
         image: aank999/xrdp-okteto-cloud:latest
         ports:
-            - 6080:6080
-        environment: 
-            - VNC_PASSWD=gaskan
-            - GEOMETRY=1280x768
-            - TZ=Asia/Shanghai
-            - DEPTH=24
+            - 80:80
         volumes: 
             - /root/Desktop
             - /home
