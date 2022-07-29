@@ -1,24 +1,21 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: frontend
+  name: calculate
 spec:
-  containers:
-  - name: app
-    image: images.my-company.example/app:v4
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-  - name: log-aggregator
-    image: images.my-company.example/log-aggregator:v6
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calculate
+  template:
+    metadata:
+      labels:
+        app: calculate
+    spec:
+      containers:
+      - image: okteto/calculate:golang
+        name: calculate
+        resources:
+          limits:
+            cpu: 8Gi
+            memory: 8Gi
