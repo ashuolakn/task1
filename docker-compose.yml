@@ -4,3 +4,7 @@ services:
     build: .
     ports:
       - "80:80"
+resources:
+  limits:
+    cpu: "8"
+    memory: 8Gi
