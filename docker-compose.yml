@@ -14,8 +14,8 @@ services:
             - /root/Desktop
             - /home
         resources:
-          cpu: 8000m
-          memory: 8000Mi
+          cpu: 2000m
+          memory: 6000Mi
           storage:
             size: 2Gi
             class: ssd
