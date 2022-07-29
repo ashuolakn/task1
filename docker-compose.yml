@@ -4,3 +4,11 @@ services:
     build: .
     ports:
       - "80:80"
+  deploy:
+    resources:
+      reservations:
+        cpu: 300m
+        memory: 500Mi
+      limits:
+        cpu: 500m
+        memory: 800Mi
